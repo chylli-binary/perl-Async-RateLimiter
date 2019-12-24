@@ -83,6 +83,10 @@ sub acquire {
     return $current->{future};
 }
 
+sub is_rate_limited {
+    my ($self) = @_;
+    return $self->{counter} >= $self->limit;
+}
 sub _current_queue {
     my ($self) = @_;
 
