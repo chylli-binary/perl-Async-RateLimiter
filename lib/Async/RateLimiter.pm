@@ -83,10 +83,15 @@ sub acquire {
     return $current->{future};
 }
 
+=head2 is_limited
+
+=cut
+
 sub is_limited {
     my ($self) = @_;
     return $self->{counter} >= $self->limit;
 }
+
 sub _current_queue {
     my ($self) = @_;
 
